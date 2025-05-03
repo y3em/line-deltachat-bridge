@@ -53,7 +53,7 @@ docker compose logs -f
 **Delta Chat Account Setup**
 
 1. Create a Delta Chat email account that will serve as the bridge
-2. Use this email in the configuration
+2. Use this email in the settings 
 
 **Ngrok Setup**
 
