@@ -1,0 +1,22 @@
+services:
+  line-delta-bridge:
+    build: .
+    container_name: line-delta-bridge
+    environment:
+      - LINE_CHANNEL_ACCESS_TOKEN=your_line_channel_access_token_here
+      - LINE_CHANNEL_SECRET=your_line_channel_secret_here
+      - MY_DC_EMAIL=your_deltachat_email@example.com
+      - DC_EMAIL=your_deltachat_email@example.com
+      - DC_PASSWORD=your_deltachat_password_here
+      - NGROK_DOMAIN=your-ngrok-domain.ngrok-free.app
+      - NGROK_AUTHTOKEN=your_ngrok_authtoken_here
+    volumes:
+      - ./tmp:/tmp
+      - delta-data:/root/.config/deltachat
+    ports:
+      - "5000:5000"  # Flask app
+      - "4040:4040"  # Ngrok web interface
+    restart: unless-stopped
+
+volumes:
+  delta-data:

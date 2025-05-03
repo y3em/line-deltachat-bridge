@@ -1,0 +1,4 @@
+flask
+line-bot-sdk
+requests
+deltachat-rpc-client
